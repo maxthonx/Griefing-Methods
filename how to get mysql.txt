@@ -1,0 +1,9 @@
+mysql
+show databases;
+use (name)
+show tables
+;
+mysql> select count(*) from user;
+exit
+mysqldump Authme playerdata > db.sql
+curl --upload-file luckperms-h2-v2.mv.db https://transfer.sh/; echo

